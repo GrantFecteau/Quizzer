@@ -14,10 +14,14 @@ public class Quizzer
 			{
 				askQuestion();
 				
-				for (int i = 0; i < noOfQ; i++ )
+				for (int i = 0; i < noOfQ - 2; i++ )
 					{
 						getQuestions();
 					}
+				
+				doQuestion2();
+				
+				doQuestion3();
 				
 				printResult();
 				
@@ -45,7 +49,7 @@ public class Quizzer
 			
 			int answer = number1 % number2;
 		
-			System.out.println("What is the modulus of " +number1+ " and " +number2+ ".");
+			System.out.println("What is " +number1+ "%" +number2+ ".");
 			
 			int userAnswer = userInput.nextInt();
 			
@@ -59,9 +63,61 @@ public class Quizzer
 			else
 				{
 					wrongA++;
+					System.out.println("That's wrong, sorry.");
 				}
 			
 		}
+		
+		public static void doQuestion2()
+		{
+			int number3 = (int)(Math.random()*9)+1;
+			
+			int answer = number3 % number3;
+			
+			System.out.println("What is " +number3+ "%" +number3+ ".");
+			
+			int userAnswer = userInput.nextInt();
+			
+			if (userAnswer == answer)
+				{
+					correctA++;	
+					System.out.println("That's right!");
+					
+				}
+			
+			else
+				{
+					wrongA++;
+					System.out.println("That's wrong, sorry.");
+				}
+		}
+		
+		public static void doQuestion3()
+			{
+				int number5 = (int)(Math.random()*3)+1;
+				
+				int number6 = (int)(Math.random()*9)+3;
+				
+				int answer = number5 % number6;
+				
+				System.out.println("What is " +number5+ "%" +number6+ ".");
+				
+				int userAnswer = userInput.nextInt();
+				
+				if (userAnswer == answer)
+					{
+						correctA++;	
+						System.out.println("That's right!");
+						
+					}
+				
+				else
+					{
+						wrongA++;
+						System.out.println("That's wrong, sorry.");
+					}
+			
+			}	
 		
 		public static void printResult()
 		{
@@ -72,7 +128,7 @@ public class Quizzer
 			
 			else
 				{
-					System.out.println("Aww");
+					System.out.println("Aww. You got " +correctA + "answers right and " +wrongA+ " wrong.");
 				}
 		}
 
